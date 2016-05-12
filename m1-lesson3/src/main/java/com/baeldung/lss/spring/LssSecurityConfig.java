@@ -33,8 +33,8 @@ public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                        .anyRequest().authenticated()
                         .antMatchers("/delete/**").hasRole("ADMIN")
+                        .anyRequest().authenticated()
                         .and()
                 .formLogin().and()
                 .httpBasic();    } // formatter:on
